@@ -49,7 +49,7 @@ while True:
     # Otherwise, tell the player if they're warmer or colder, and continue asking for guesses.
     if guesses[-2]:
         # On all subsequent turns, if a guess is closer to the number than the previous guess return "WARMER!"
-        if abs(guess-num) < abs(num-guesses[-2]):
+        if abs(guess-num) < abs((guesses[-2])-num):
             print('WARMER!')
         # farther from the number than the previous guess, return "COLDER!"
         else:
