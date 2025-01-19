@@ -47,9 +47,18 @@ while True:
     guesses.append(guess)
 
     # Otherwise, tell the player if they're warmer or colder, and continue asking for guesses.
+    if guesses[-2]:
+        # On all subsequent turns, if a guess is closer to the number than the previous guess return "WARMER!"
+        if abs(guess-num) < abs(num-guesses[-2]):
+            print('WARMER!')
+        # farther from the number than the previous guess, return "COLDER!"
+        else:
+            print('COLDER!')
+    
     # On a player's first turn, if their guess is within 10 of the number, return "WARM!"
-    if abs(guess-num) <= 10:
-        print('WARM!')
-    #further than 10 away from the number, return "COLD!"
     else:
-        print('COLD')
+        if abs(guess-num) <= 10:
+            print('WARM!')
+    #further than 10 away from the number, return "COLD!"
+        else:
+            print('COLD!')
