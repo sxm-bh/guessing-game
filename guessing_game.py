@@ -34,7 +34,7 @@ while True:
     print(guess)
 
     # If a player's guess is less than 1 or greater than 100, say "OUT OF BOUNDS"
-    if guess not in range(1,101):
+    if guess < 1 or guess > 100:
         print('OUT OF BOUNDS')
         continue
 
